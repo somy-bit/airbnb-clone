@@ -3,6 +3,7 @@ import Footer from '../components/Footer'
 import { useRouter } from 'next/router'
 import { format } from 'date-fns'
 import InfoCard from '../components/InfoCard'
+import Map from '../components/Map'
 
 export default function Search({ searchResults }) {
 
@@ -18,7 +19,7 @@ export default function Search({ searchResults }) {
     let placeHolder = `${location} | ${formattedStartDate} - ${formattedEndDate} - ${noOfGuests} guests`
     return (<div>
         <Header placeHolder={placeHolder} />
-        <main className='flex'>
+        <main className='flex flex-col xl:flex-row'>
             <section className='px-5 md:px-7'>
                 <p className='text-sm ml-3 my-3'>+300 - {range} - for {noOfGuests} guests {location}</p>
                 <h1 className='text-4xl ml-4 font-semibold my-6'>Staying in {location}</h1>
@@ -46,6 +47,10 @@ export default function Search({ searchResults }) {
 
 
 
+            </section>
+
+            <section className='hidden xl:inline-flex xl:min-w-[600px] '>
+                <Map results={searchResults}/>
             </section>
         </main>
 

@@ -3,6 +3,8 @@ import type { AppProps } from 'next/app'
 import ProgressBar from '@badrap/bar-of-progress'
 import router from 'next/router'
 
+import 'mapbox-gl/dist/mapbox-gl.css';
+
 const progress = new ProgressBar({
   size:4,
   className:'z-50',
